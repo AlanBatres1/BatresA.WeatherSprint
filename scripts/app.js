@@ -1,35 +1,37 @@
-import { APIKEY } from "./enviroment.js";
+import { APIKEY } from './environment.js';   
 
 
-// This is a built in API that will allow the user to get their current location upon accepting the prompt
+//Geo location is a built in API that allows the user to share there location apon request.
 
-// navigator returns the geolaction object
-// getCurrentPosition() returns the current position of the user
-
+//navigator.geolocation this return geolocation object
+//getCurrentPosition method lets the web app get the current position
 
 navigator.geolocation.getCurrentPosition(success, errorFunc);
-// Think of this as if/else statement if the user accepts it is succesful, if not it is an error
+//You can think of this as an if statment if user accepts we run success else we run errorFunc
 
+//Example of the geolocation Object below
 {
-    cords: {
-        latitude: 37.7749;
-        longitude: -122.4194;
+    coords: {
+        latitude: 32.1234;
+        longitude: 13.1234;
     }
 }
 
+//If the user accepts we run success function
 function success(position){
     console.log(position);
-    console.log("Our latitude is: " + position.cords.latitude);
-    console.log("Our longitude is: " + position.cords.longitude);
-    console.log("Now we know where you are!");
+    console.log("Our latitude: " + position.coords.latitude);
+    console.log("Our longitude: " + position.coords.longitude);
+    console.log("We know where you are!");
+
 }
 
+//If the user denies we run errorFunc
 function errorFunc(error){
-    console.log(error.message)
+    console.log(error.message);
 }
 
-success();
-
+//Create the apiCall while using the APIKEY from the environment.js file
 function apiCall () {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=37.9577&lon=-121.2908&appid=${APIKEY}`)
     .then((response) => {
@@ -39,5 +41,4 @@ function apiCall () {
         console.log(data);
     })
 }
-
 apiCall();
