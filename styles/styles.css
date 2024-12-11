@@ -31,6 +31,27 @@
     grid-column: 5;
     grid-row: 1/4;
 }
+.hamburgerWidth{
+    width: 215px;
+}
+
+.hamburgerBg{
+    border: 0;
+}
+
+.favoritesBG{
+    background-color: rgba(217, 217, 217, 0.59);
+    width: 100%;
+}
+
+.favoriteTitle{
+    font-size: 36px;
+}
+
+.navbar-toggler-icon{
+    width: 40px;
+    height: 40px;
+}
 
 .currentWeather {
   grid-column: 3;
@@ -47,6 +68,8 @@
 
 .currentHighLow {
   font-size: 24px;
+  display: flex;
+  flex-direction: row;
 }
 
 .currentImg {
@@ -69,11 +92,48 @@
   grid-row: 3;
   display: flex;
   justify-content: end;
+  margin-right: 10px;
 }
 
 .locationIcon img {
   width: 73.14px;
   height: 83.21px;
+}
+
+.location-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000000;
+  padding: 10px;
+  width: 401.32px;
+  height: 91.53px;
+  grid-column: 3/5;
+  grid-row: 3;
+  font-size: 36px;
+}
+
+.locationText{
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0;
+background-color: transparent;
+border: 0;
+color: black;
+}
+
+.location-box input:focus {
+  border: none;
+  outline: none;
+}
+
+.star{
+  width: 65.92px;
+  height: 65.92px;
+  grid-column: 4;
+  grid-row: 3;
+  margin-left: 125px;
+  margin-top: 10px;
 }
 
 .day1 {
