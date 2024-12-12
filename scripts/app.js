@@ -1,6 +1,21 @@
 import { APIKEY } from './environment.js';   
 
-let currentTemp= document.getElementById('currentTemp')
+let currentTemp = document.getElementById('currentTemp')
+let currentLocation = document.getElementById('currentLoction')
+let currentHigh = document.getElementById('currentHigh')
+let currentLow = document.getElementById('currentLow')
+let currentImg = document.getElementById('currentImg')
+let day1Temp = document.getElementById('day1Temp')
+let day1 = document.getElementById('day1')
+let day2Temp = document.getElementById('day2Temp')
+let day2 = document.getElementById('day2')
+let day3Temp = document.getElementById('day3Temp')
+let day3 = document.getElementById('day3')
+let day4Temp = document.getElementById('day4Temp')
+let day4 = document.getElementById('day4')
+let day5Temp = document.getElementById('day5Temp')
+let day5 = document.getElementById('day5')
+
 
 //Geo location is a built in API that allows the user to share there location apon request.
 
