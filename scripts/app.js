@@ -6,6 +6,8 @@ let currentHigh = document.getElementById('currentHigh');
 let currentLow = document.getElementById('currentLow');
 let currentImg = document.getElementById('currentImg');
 let searchBox = document.getElementById('searchBox');
+let starBtn=document.getElementById('starBtn');
+let star=document.getElementById('star');
 
 // forecast
 let day1Img = document.getElementById('day1Img');
@@ -88,7 +90,6 @@ function apiCall(cityName) {
             return response.json();
         })
         .then((data) => {
-            // Process forecast data (OpenWeatherMap provides 3-hour interval forecasts)
             const forecastDays = [
                 { element: day1, imgElement: day1Img, tempElement: day1Temp },
                 { element: day2, imgElement: day2Img, tempElement: day2Temp },
@@ -113,14 +114,11 @@ function apiCall(cityName) {
                 const forecastData = forecast[1];
                 const dayElement = forecastDays[index];
 
-                // Set day name
                 const forecastDate = new Date(forecastData.dt * 1000);
                 dayElement.element.innerText = forecastDate.toLocaleDateString('en-US', { weekday: 'short' });
 
-                // Set temperature
                 dayElement.tempElement.innerText = Math.round(forecastData.main.temp) + '°F';
 
-                // Set weather icon
                 dayElement.imgElement.src = getWeatherIcon(forecastData.weather[0].main);
             });
         })
@@ -130,7 +128,7 @@ function apiCall(cityName) {
 }
 
 searchBox.addEventListener('keypress', function (event) {
-    if (event.key === 'Enter') {
+    if (event.key == 'Enter') {
         const location = searchBox.value.trim();
         if (location) {
             apiCall(location);
@@ -138,4 +136,14 @@ searchBox.addEventListener('keypress', function (event) {
     }
 });
 
+let isClicked = false;
 
+        starBtn.addEventListener('click', () => {
+            if (isClicked) {
+                star.src = "./assets/star.png";
+                isClicked = false;
+            } else {
+                star.src = "./assets/star (1).png";
+                isClicked = true;
+            }
+        });

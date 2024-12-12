@@ -134,6 +134,13 @@ color: black;
   grid-row: 3;
   margin-left: 125px;
   margin-top: 10px;
+  background-color: transparent;
+  border: 0;
+}
+
+.star img{
+  width: 65.92px;
+  height: 65.92px;
 }
 
 .day1 {
