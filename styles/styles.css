@@ -42,10 +42,19 @@
 .favoritesBG{
     background-color: rgba(217, 217, 217, 0.59);
     width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.favoritesBG button{
+  background: none;
+  border: 0;
 }
 
-.favoriteTitle{
+.favoritesTitle{
     font-size: 36px;
+    background-color: rgba(217, 217, 217, 0.59);
+    width: 100%;
+    margin: 0;
 }
 
 .navbar-toggler-icon{
