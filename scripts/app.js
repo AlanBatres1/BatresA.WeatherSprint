@@ -56,7 +56,7 @@ function success(position) {
         })
         .catch((error) => {
             console.log('Error fetching geolocation weather:', error);
-            // Fallback to Stockton if geolocation weather fetch fails
+            // Default Stockton if geolocation weather fetch fails
             apiCall('Stockton');
         });
 
@@ -77,11 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
         // Geolocation is not supported
-        console.log('Geolocation is not supported by this browser');
         apiCall('Stockton');
     }
-
-    // Ensure favorites list is updated
     updateFavoritesList();
 });
 
